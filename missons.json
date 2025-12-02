@@ -1,28 +1,28 @@
 {
-    "easy":{
-        "Support / Recovery Missions": {
-            "mission":[
-                {
-                    "title":"Healing", 
-                    "weights":{ "combat": 0.05, "vigor": 0.25, "mobility": 0.05, "charisma": 0.5, "intelligence": 0.15,"perception": 0},
-                    "XP gained": 50,
-                    "duration": 1
-                },
-
-                {"title":"Aid Civilians", "weights":{ "combat": 0.05, "vigor": 0.25, "mobility": 0.1, "charisma": 0.45, "intelligence": 0.2}},
-                {"title":"Supply Gathering", "weights":{ "combat": 0.15, "vigor": 0.25, "mobility": 0.15, "charisma": 0.35, "intelligence": 0.1}},
-                {"title":"Escort", "weights":{ "combat": 0.15, "vigor": 0.2, "mobility": 0.2, "charisma": 0.35, "intelligence": 0.1}},
-                {"title":"Transportation", "weights":{ "combat": 0, "vigor": 0.15, "mobility": 0.1, "charisma": 0.5, "intelligence": 0.25}}
-            ]
-
+  "easy": {
+    "Support Missions": {
+      "missions": [
+        {
+          "id": "easy_heal_001",
+          "title": "Healing the Sick",
+          "category": "Support / Recovery Missions",
+          "difficulty": "easy",
+          "description": "A village healer collapsed after treating a strange fever. Stabilize the healer and treat the most critical patients before the night.",
+          "objectives": ["Stabilize the healer", "Cure 3 patients"],
+          "hints": ["Prioritize restoration and intelligence.", "A charismatic medic helps calm panicked patients."],
+          "statWeights": {
+            "combat": 0.0, "vigor": 0.07, "mobility": 0.03, "fortitude": 0.05,
+            "intelligence": 0.15, "charisma": 0.20, "perception": 0.10, "arcane": 0.0, "restoration": 0.40
+          },
+          "maxPartySize": 3,
+          "staminaCost": 25,
+          "failureConditions": ["Too many patients die", "Nightfall before healer stabilized"],
+          "outcomes":{
+            "success": {"xpReward": 50},
+            "fail": {"penalty":"injury"}
+          }
         }
-
-
-    },
-    "medium":{
-
-    },
-    "hard":{
-
+      ]
     }
+  }
 }

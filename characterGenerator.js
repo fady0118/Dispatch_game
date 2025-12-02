@@ -5,10 +5,10 @@ function statGen(role,level,stamina){
     // stamina is between (40,100) at step 20, we need to compensate low stamina characters by giving them more stats
     const stm = (1 - stamina/100)/2; // (max stm bonus = 30%)
 
-    // level should correspond to the total number of stat points (each lvl one point)
+    // points have base value and scale with level and compensate low stamina
     const totalPoints = (1 + stm) * (25 + level*3.5);
 
-    // roles should matter when distributing stats (ex. mage should have high int)
+    // roles should matter when distributing stats (ex. mage should have high arcane)
     const role_weights = {
             Warrior: {
                 combat: 0.32, vigor: 0.22, mobility: 0.12, fortitude: 0.20,

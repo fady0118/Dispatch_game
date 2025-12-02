@@ -1,7 +1,26 @@
-// function getMission(){
-//     let mission = {
-//         title, m_type, m_tasks, required_stats, available_slots, m_location,
-        
-//     }
-//     return mission;
-// }
+const missionsData = require("./missons.json");
+// mission difficulty have star rating system that will be translated to total_mission_score
+// trivial(0.5), easy(1-2), medium(2.5-3.5), hard(4-5), elite(5-10)
+const missionDiff = {
+  trivial: { min: 0.5, max: 0.5 },
+  easy: { min: 1, max: 2 },
+  medium: { min: 2.5, max: 3.5 },
+  hard: { min: 4, max: 5 },
+  elite: { min: 6, max: 10 },
+};
+
+function getMission(difficulty, type) {
+  //    console.log(missionsData.difficulty['Support Missions'].missions[0])
+  let mission = missionsData[difficulty][type].missions[0];
+  mission.starRating = getStarRating(difficulty);
+  return mission;
+}
+const mission_1 = getMission("easy", "Support Missions");
+console.log(mission_1);
+
+function getStarRating(difficulty) {
+  const { min, max } = missionDiff[difficulty];
+  const halfSteps = Math.floor(Math.random() * ((max - min) * 2 + 1));
+  const stars = min + halfSteps * 0.5;
+  return stars;
+}
