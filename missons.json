@@ -1,0 +1,28 @@
+{
+    "easy":{
+        "Support / Recovery Missions": {
+            "mission":[
+                {
+                    "title":"Healing", 
+                    "weights":{ "combat": 0.05, "vigor": 0.25, "mobility": 0.05, "charisma": 0.5, "intelligence": 0.15,"perception": 0},
+                    "XP gained": 50,
+                    "duration": 1
+                },
+
+                {"title":"Aid Civilians", "weights":{ "combat": 0.05, "vigor": 0.25, "mobility": 0.1, "charisma": 0.45, "intelligence": 0.2}},
+                {"title":"Supply Gathering", "weights":{ "combat": 0.15, "vigor": 0.25, "mobility": 0.15, "charisma": 0.35, "intelligence": 0.1}},
+                {"title":"Escort", "weights":{ "combat": 0.15, "vigor": 0.2, "mobility": 0.2, "charisma": 0.35, "intelligence": 0.1}},
+                {"title":"Transportation", "weights":{ "combat": 0, "vigor": 0.15, "mobility": 0.1, "charisma": 0.5, "intelligence": 0.25}}
+            ]
+
+        }
+
+
+    },
+    "medium":{
+
+    },
+    "hard":{
+
+    }
+}
