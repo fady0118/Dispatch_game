@@ -10,14 +10,25 @@ const missionDiff = {
 };
 
 function getMission(difficulty, type) {
-  //    console.log(missionsData.difficulty['Support Missions'].missions[0])
-  let mission = missionsData[difficulty][type].missions[0];
-  mission.starRating = getStarRating(difficulty);
-  return mission;
+  // load a mission from the data
+  const availableMission = missionsData[difficulty][type].missions;
+  let missionData = availableMission[Math.floor(Math.random()*availableMission.length)];
+  const missionWeights = Object.entries(missionData.statWeights);
+  // add mission starRatings
+  missionData.starRating = getStarRating(difficulty);
+  missionData.totalMissionScore = 25 + (missionData.starRating * 10);
+  // add mission requirements
+  const missionRequirement = missionWeights.map(([key, value])=>{
+    return {[key]:Math.round(value * missionData.totalMissionScore)}
+  })
+  missionData.missionRequirement = missionRequirement
+  return missionData;
 }
-const mission_1 = getMission("easy", "Support Missions");
-console.log(mission_1);
+console.log(getMission('easy','Combat Missions'))
+console.log(getMission('medium','Escort Missions'))
+console.log(getMission('hard','Arcane Missions'))
 
+// utility functions
 function getStarRating(difficulty) {
   const { min, max } = missionDiff[difficulty];
   const halfSteps = Math.floor(Math.random() * ((max - min) * 2 + 1));

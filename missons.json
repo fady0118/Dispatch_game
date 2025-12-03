@@ -8,21 +8,199 @@
           "category": "Support / Recovery Missions",
           "difficulty": "easy",
           "description": "A village healer collapsed after treating a strange fever. Stabilize the healer and treat the most critical patients before the night.",
-          "objectives": ["Stabilize the healer", "Cure 3 patients"],
-          "hints": ["Prioritize restoration and intelligence.", "A charismatic medic helps calm panicked patients."],
+          "objectives": [
+            "Stabilize the healer",
+            "Cure 3 patients"
+          ],
+          "hints": [
+            "Prioritize restoration and intelligence.",
+            "A charismatic medic helps calm panicked patients."
+          ],
           "statWeights": {
-            "combat": 0.0, "vigor": 0.07, "mobility": 0.03, "fortitude": 0.05,
-            "intelligence": 0.15, "charisma": 0.20, "perception": 0.10, "arcane": 0.0, "restoration": 0.40
+            "combat": 0.0,
+            "vigor": 0.07,
+            "mobility": 0.03,
+            "fortitude": 0.05,
+            "intelligence": 0.15,
+            "charisma": 0.20,
+            "perception": 0.10,
+            "arcane": 0.0,
+            "restoration": 0.40
           },
           "maxPartySize": 3,
           "staminaCost": 25,
-          "failureConditions": ["Too many patients die", "Nightfall before healer stabilized"],
-          "outcomes":{
-            "success": {"xpReward": 50},
-            "fail": {"penalty":"injury"}
+          "failureConditions": [
+            "Too many patients die",
+            "Nightfall before healer stabilized"
+          ],
+          "outcomes": {
+            "success": {
+              "xpReward": 50
+            },
+            "fail": {
+              "penalty": "injury"
+            }
+          }
+        }
+      ]
+    },
+    "Combat Missions": {
+      "missions": [
+        {
+          "id": "easy_combat_007",
+          "title": "Break the Goblin Raid Party",
+          "category": "Combat / Skirmish",
+          "difficulty": "easy",
+          "description": "A small goblin raiding group has been spotted near the outskirts of a farming village. Drive them off before they regroup and strike the villagers.",
+          "objectives": [
+            "Track the goblin raiders",
+            "Defeat the raid party"
+          ],
+          "hints": [
+            "Combat-focused heroes excel here.",
+            "Perception helps find the raiding tracks quickly."
+          ],
+          "statWeights": {
+            "combat": 0.55,
+            "vigor": 0.15,
+            "mobility": 0.15,
+            "fortitude": 0.10,
+            "intelligence": 0.0,
+            "charisma": 0.0,
+            "perception": 0.05,
+            "arcane": 0.0,
+            "restoration": 0.0
+          },
+          "maxPartySize": 2,
+          "staminaCost": 20,
+          "failureConditions": [
+            "Goblins escape and warn their tribe",
+            "A party member is incapacitated"
+          ],
+          "mechanics": [
+            "Simple Combat Check"
+          ],
+          "outcomes": {
+            "success": {
+              "xpReward": 60
+            },
+            "fail": {
+              "penalty": "light_injury"
+            }
           }
         }
       ]
     }
-  }
+  },
+  "medium": {
+    "Escort Missions": {
+      "missions": [
+        {
+          "id": "medium_escort_002",
+          "title": "Caravan Through Ashwind Pass",
+          "category": "Escort / Defense",
+          "difficulty": "medium",
+          "description": "A merchant caravan must pass through Ashwind Pass, a region known for sudden bandit ambushes. Ensure the caravan reaches the next outpost safely.",
+          "objectives": [
+            "Scout the pass for ambush points",
+            "Defend the caravan from at least one attack",
+            "Ensure no wagons are lost"
+          ],
+          "hints": [
+            "A balanced team with scouting and combat ability is ideal.",
+            "Mobility helps intercept bandits early.",
+            "Charisma can defuse certain confrontations."
+          ],
+          "statWeights": {
+            "combat": 0.25,
+            "vigor": 0.10,
+            "mobility": 0.20,
+            "fortitude": 0.15,
+            "intelligence": 0.10,
+            "charisma": 0.10,
+            "perception": 0.10,
+            "arcane": 0.0,
+            "restoration": 0.0
+          },
+          "maxPartySize": 3,
+          "staminaCost": 30,
+          "failureConditions": [
+            "Caravan loses more than one wagon",
+            "Caravan leader is injured",
+            "Bandits overwhelm the defenders"
+          ],
+          "mechanics": [
+            "Ambush Detection",
+            "Defense Phases",
+            "Travel Distance Tracking"
+          ],
+          "outcomes": {
+            "success": {
+              "xpReward": 120,
+              "loot": "Merchant's Gratitude Package"
+            },
+            "fail": {
+              "penalty": "minor_injury"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "hard": {
+    "Arcane Missions": {
+      "missions": [
+        {
+          "id": "hard_arcane_001",
+          "title": "The Shattered Ley Nexus",
+          "category": "Arcane / Containment",
+          "difficulty": "hard",
+          "description": "A ley nexus deep in the Whispering Caverns has fractured, causing unstable magical surges. Stabilize the core before the cascading arcane feedback damages the entire region.",
+          "objectives": [
+            "Locate the fractured ley lines",
+            "Suppress at least 3 unstable arcane surges",
+            "Stabilize the nexus core using synchronized channeling"
+          ],
+          "hints": [
+            "Arcane and intelligence are vital for controlling magical output.",
+            "A durable guardian helps protect channelers during arcane bursts.",
+            "Perception helps detect hidden ley fractures."
+          ],
+          "statWeights": {
+            "combat": 0.10,
+            "vigor": 0.05,
+            "mobility": 0.05,
+            "fortitude": 0.12,
+            "intelligence": 0.20,
+            "charisma": 0.05,
+            "perception": 0.13,
+            "arcane": 0.25,
+            "restoration": 0.05
+          },
+          "maxPartySize": 5,
+          "staminaCost": 40,
+          "failureConditions": [
+            "Arcane overload reaches critical threshold",
+            "A channeler collapses mid-ritual",
+            "Too many unstable surges occur back-to-back"
+          ],
+          "mechanics": [
+            "Arcane Stability Checks",
+            "Multi-phase Ritual",
+            "Random Ley Surge Events"
+          ],
+          "outcomes": {
+            "success": {
+              "xpReward": 180,
+              "loot": "Arcane Conduit Stone"
+            },
+            "fail": {
+              "penalty": "arcane_burn_debuff"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "elite": {}
 }
