@@ -1,4 +1,4 @@
-const missionsData = require("./missons.json");
+import missionsData from './missons.json' with {type:'json'}
 // mission difficulty have star rating system that will be translated to total_mission_score
 // trivial(0.5), easy(1-2), medium(2.5-3.5), hard(4-5), elite(5-10)
 const missionDiff = {
@@ -9,7 +9,7 @@ const missionDiff = {
   elite: { min: 6, max: 10 },
 };
 
-function getMission(difficulty, type) {
+export default function getMission(difficulty, type) {
   // load a mission from the data
   const availableMission = missionsData[difficulty][type].missions;
   let missionData = availableMission[Math.floor(Math.random()*availableMission.length)];
@@ -24,9 +24,7 @@ function getMission(difficulty, type) {
   missionData.missionRequirement = missionRequirement
   return missionData;
 }
-console.log(getMission('easy','Combat Missions'))
-console.log(getMission('medium','Escort Missions'))
-console.log(getMission('hard','Arcane Missions'))
+
 
 // utility functions
 function getStarRating(difficulty) {

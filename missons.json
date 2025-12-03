@@ -35,7 +35,8 @@
           ],
           "outcomes": {
             "success": {
-              "xpReward": 50
+              "xpReward": 50,
+              "gold":100
             },
             "fail": {
               "penalty": "injury"
@@ -82,7 +83,8 @@
           ],
           "outcomes": {
             "success": {
-              "xpReward": 60
+              "xpReward": 60,
+              "gold":100
             },
             "fail": {
               "penalty": "light_injury"
@@ -137,6 +139,7 @@
           "outcomes": {
             "success": {
               "xpReward": 120,
+              "gold":250,
               "loot": "Merchant's Gratitude Package"
             },
             "fail": {
@@ -192,6 +195,7 @@
           "outcomes": {
             "success": {
               "xpReward": 180,
+              "gold":500,
               "loot": "Arcane Conduit Stone"
             },
             "fail": {

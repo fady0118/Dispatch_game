@@ -171,7 +171,7 @@ function statGen(role, level, stamina) {
 }
 
 // character generating function
-function generateCharacter() {
+export default function generateCharacter() {
   const name = namesArray[Math.floor(Math.random() * namesArray.length)];
   const role = roles[Math.floor(Math.random() * roles.length)];
   const level = Math.floor(Math.random() * 4) + 2; // min lvl 2 max 5
@@ -191,4 +191,4 @@ function generateCharacter() {
   };
   return character;
 }
-console.log(generateCharacter());
+
